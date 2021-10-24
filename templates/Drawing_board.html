@@ -1,3 +1,11 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-10-01 18:42:10
+ * @LastEditTime: 2021-10-24 13:54:39
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \云板\templates\Drawing_board.html
+-->
 <!DOCTYPE html
     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -8,51 +16,39 @@
     <meta http-equiv="Cache-Control" content="no-cache, must-revalidate">
     <meta http-equiv="expires" content="0">
     <title>canvas绘图板</title>
-    <link rel="stylesheet" href="css/paper.min.css">
     <link rel="stylesheet" href="css/Initialize.css">
-    <style>
-        canvas {
-            border: 1px dashed black;
-        }
-
-        #nav li {
-            display: inline;
-            font-size: 20px;
-            margin-left: 40px;
-        }
-
-        .fl {
-            float: left;
-        }
-
-        button {
-            width: 100px;
-            height: 45px;
-            background: url("img/画笔.png") no-repeat;
-            border-style: none;
-        }
-    </style>
-    <script type="text/javascript" src="js/canvas.js"></script>
-</head>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/basic.css">
 
 <body>
-    <div class="The menu">
-        <button>园</button>
-        <canvas id="drawingCanvas">你的浏览器不支持canvas</canvas>
-        <!-- <div align="center">
-        <ul id="nav">
-            <li>矩形</li>
-            <li>圆</li>
-            <li>颜色<input type="color" id="colorSelect" onchange="changeColor(colorSelect.value,this);"
-                    value="rgb(255,255,255)" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
-            <li>粗细<input type="range" id="widthSelect" onchange="context.lineWidth=widthSelect.value;" min="1" max="20"
-                    value="5" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
-            <li>橡皮擦<input type="range" id="eraser" onchange="context.lineWidth=widthSelect.value;" min="1" max="20"
-                    value="5" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
-            <li> <button id="clearCanvas" onclick="clearCanvas();">清除</button></li>
-        </ul>
-        <br /> -->
-        <!-- </div> -->
+    <canvas id="drawingCanvas">你的浏览器不支持canvas</canvas>
+    <div class="card options">
+        <div class="btn-group">
+            <button class="icon-block" onclick="clearCanvas()"><img class="icon" src="img/删除.svg" alt=""></button>
+            <button class="icon-block"><img class="icon" src="img/保存.svg" alt=""></button>
+            <button class="icon-block"><img class="icon" src="img/载入.svg" alt=""></button>
+        </div>
+        <div class="color-box">
+            <div class="color-block"></div>
+            <div class="color-input-box">
+                <button class="color-well-character"><i>#</i>
+                </button>
+                <input type="text" class="color-input" placeholder=" ">
+            </div>
+        </div>
+    </div>
+    <div class="btn-group fixed-bottom menu">
+        <button class=" icon-block" id="choose" title="选择"><img class="icon" src="img/鼠标.svg" alt=""></button>
+        <button class=" icon-block" id="rectangular" title=" 矩形"><img class="icon" src="img/圆角矩形.svg" alt=""></button>
+        <button class=" icon-block" id="rhombus" title="菱形"><img class="icon" src="img/菱形.svg" alt=""></button>
+        <button class=" icon-block" id="garden" title="园"><img class="icon" src="img/园.svg" alt=""></button>
+        <button class=" icon-block" id="arrow" title="箭头"><img class="icon" src="img/箭头_向右.svg" alt=""></button>
+        <button class=" icon-block" id="line" title="线条"><img class="icon" src="img/线条.svg" alt=""></button>
+        <button class=" icon-block" id="brush" title="画笔" onclick=""><img class="icon" src="img/画笔.svg" alt=""></button>
+        <button class=" icon-block" id="text" title="文字"><img class="icon" src="img/文字.svg" alt=""></button>
+    </div>
+    <script src="js/canvas.js"></script>
 </body>
 
 </html>

@@ -143,3 +143,5 @@ webVenv/
 .vscode/
 learning.md
 design.md
+ui设计稿/
+.gitignore
